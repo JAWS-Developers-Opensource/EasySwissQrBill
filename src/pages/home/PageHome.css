@@ -1,0 +1,202 @@
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+
+.home-page__form {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fade-in 0.6s ease forwards;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.home-page__title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #111;
+}
+
+.home-page__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.home-page__label {
+    font-weight: 500;
+    color: #333;
+}
+
+.home-page__input {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 12px;
+    background: #f0f2f5;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.home-page__input:focus {
+    outline: none;
+    background: #e9ecf0;
+    box-shadow: 0 0 0 2px #007aff33;
+}
+
+.home-page__split {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.home-page__address {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.5rem;
+}
+
+.home-page__dropdown {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+.home-page__dropdown-selected {
+    padding: 0.8rem 1rem;
+    background: #e9ecf0;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 12px;
+    color: #111;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+}
+
+.home-page__dropdown-selected:hover {
+    background: #e1e3e7;
+}
+
+.home-page__dropdown-arrow {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    transition: transform 0.25s ease;
+}
+
+.home-page__dropdown.is-open .home-page__dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.home-page__dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform-origin: top center;
+    transform: scaleY(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 999;
+}
+
+.home-page__dropdown.is-open .home-page__dropdown-menu {
+    opacity: 1;
+    transform: scaleY(1);
+    pointer-events: all;
+}
+
+.home-page__dropdown-item {
+    padding: 0.8rem 1rem;
+    color: #111;
+    font-weight: 500;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.home-page__dropdown-item:hover {
+    background: rgba(0, 122, 255, 0.12);
+    transform: scale(1.02);
+}
+
+.home-page__dropdown-item.is-active {
+    background: rgba(0, 122, 255, 0.2);
+    font-weight: 600;
+    color: #004aad;
+}
+
+.home-page__button {
+    background: linear-gradient(135deg, #007aff, #5ac8fa);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.home-page__button:hover {
+    box-shadow: 0 6px 20px rgba(0,122,255,0.3);
+}
+
+@media (max-width: 600px) {
+    .home-page__form {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .home-page__title {
+        font-size: 1.4rem;
+    }
+
+    .home-page__input {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.9rem;
+    }
+
+    .home-page__button {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+
+    .home-page__dropdown-selected {
+        padding: 0.7rem 0.9rem;
+    }
+
+    .home-page__dropdown-item {
+        padding: 0.7rem 0.9rem;
+    }
+}
