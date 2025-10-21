@@ -1,7 +1,7 @@
 {
   "name": "com.jawsdevelopers.easyswissqrbill",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "file-saver": "^2.0.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.4"
+    "react-router-dom": "^7.9.4",
+    "swissqrbill": "^4.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

@@ -5,7 +5,6 @@
     min-height: 100vh;
     padding: 1rem;
     background: linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
 }
 
 .home-page__form {
