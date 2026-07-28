@@ -14,17 +14,17 @@ try {
 
     $qrBill->setCreditor(
         QrBill\DataGroup\Element\StructuredAddress::createWithStreet(
-            'Timo Domenico Coupek',
-            'Via Pizzo di Claro',
-            '7',
-            '6512',
-            'Giubiasco',
-            'CH'
+            '<NAME>',
+            '<ADDRESS>',
+            '<NUMBER>',
+            '<CAP>',
+            '<CITYY',
+            '<NATION>'
         )
     );
 
     $qrBill->setCreditorInformation(
-        QrBill\DataGroup\Element\CreditorInformation::create('CH1909000000166141792') // IBAN del conto privato
+        QrBill\DataGroup\Element\CreditorInformation::create('<IBAN>') // IBAN del conto privato
     );
 
     $qrBill->setUltimateDebtor(
